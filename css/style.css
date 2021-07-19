@@ -194,6 +194,26 @@ body._lock {
   }
 }
 
+@-webkit-keyframes animText {
+  0% {
+    color: inherit;
+  }
+
+  100% {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+@keyframes animText {
+  0% {
+    color: inherit;
+  }
+
+  100% {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
 .footer {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -525,7 +545,7 @@ body._lock {
 
 .intro::after {
   z-index: 2;
-  width: 50%;
+  width: 52%;
   background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -636,6 +656,19 @@ body._lock {
           animation-delay: 0s;
 }
 
+.intro__scroll._anim .intro__text {
+  -webkit-animation-name: animText;
+          animation-name: animText;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
 .intro__scroll-column {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -670,7 +703,7 @@ body._lock {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 48%;
   height: calc(100% + 40px);
   z-index: 1;
   -o-object-fit: cover;
@@ -682,7 +715,7 @@ body._lock {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 48%;
   height: calc(100% + 40px);
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.9);
