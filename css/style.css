@@ -267,6 +267,9 @@ body._lock {
 ._icon {
   width: 23px;
   height: 23px;
+  -webkit-transition: fill 0.3s ease 0s;
+  -o-transition: fill 0.3s ease 0s;
+  transition: fill 0.3s ease 0s;
 }
 
 .header {
@@ -545,7 +548,7 @@ body._lock {
 
 .intro::after {
   z-index: 2;
-  width: 52%;
+  width: calc(52% + 1px);
   background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -603,9 +606,6 @@ body._lock {
   height: 35px;
   fill: #fff;
   margin: 0px 0px 0px 12px;
-  -webkit-transition: fill 0.3s ease 0s;
-  -o-transition: fill 0.3s ease 0s;
-  transition: fill 0.3s ease 0s;
 }
 
 .intro__btn._anim {
@@ -1106,6 +1106,128 @@ body._lock {
   color: #000;
 }
 
+.design {
+  padding-top: 295px;
+  padding-bottom: 295px;
+  position: relative;
+}
+
+.design::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/desire/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.design::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 7, 7, 0.9);
+}
+
+.design__inner {
+  z-index: 10;
+  position: relative;
+}
+
+.design__inner::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  height: 151px;
+  width: 1px;
+  background-color: #fff;
+}
+
+.design__content {
+  max-width: 510px;
+  margin: 0 auto;
+}
+
+.design__title {
+  font-size: 48px;
+  line-height: 125%;
+  color: #BEA67C;
+  position: relative;
+}
+
+.design__title:not(:last-child) {
+  margin: 0px 0px 0.7916666667em 0px;
+}
+
+.design__title::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: -175px;
+  height: 1px;
+  width: 150px;
+  background-color: #fff;
+}
+
+.design__text {
+  line-height: 166.6666666667%;
+  color: #fff;
+  position: relative;
+}
+
+.design__text::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -74px;
+  height: 4px;
+  width: 44px;
+  background-color: #BEA67C;
+}
+
+.design__btn {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  height: 58px;
+  letter-spacing: 3px;
+  margin-top: 35px;
+  position: relative;
+}
+
+.design__btn ._play {
+  fill: #fff;
+  width: 25px;
+  height: 25px;
+  margin: 0px 14px 0px 0px;
+  -webkit-transition: fill 0.3s ease 0s;
+  -o-transition: fill 0.3s ease 0s;
+  transition: fill 0.3s ease 0s;
+}
+
+.design ._icon {
+  position: absolute;
+  top: 90px;
+  left: 180px;
+  width: 80%;
+  height: 80%;
+  z-index: 5;
+}
+
 .page {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -1146,6 +1268,21 @@ body._lock {
   .item-quality__btn-play ._icon:hover {
     fill: #000;
   }
+
+  .design__btn:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .design__btn:hover ._play {
+    fill: #000;
+  }
+}
+
+@media (max-width: 1500px) {
+  .design__inner::after {
+    right: 150px;
+  }
 }
 
 @media (max-width: 1300px) {
@@ -1154,6 +1291,12 @@ body._lock {
   }
 
   .item-decor__text::before {
+    display: none;
+  }
+}
+
+@media (max-width: 1250px) {
+  .design__title::before {
     display: none;
   }
 }
@@ -1240,6 +1383,32 @@ body._lock {
   .top-quality__title {
     font-size: calc(24px + 24 * ((100vw - 320px) / 910));
   }
+
+  .design {
+    padding-top: calc(30px + 265 * ((100vw - 320px) / 910));
+  }
+
+  .design {
+    padding-bottom: calc(30px + 265 * ((100vw - 320px) / 910));
+  }
+
+  .design__title {
+    font-size: calc(24px + 24 * ((100vw - 320px) / 910));
+  }
+
+  .design__btn {
+    height: calc(45px + 13 * ((100vw - 320px) / 910));
+  }
+
+  .design__btn {
+    margin-top: calc(20px + 15 * ((100vw - 320px) / 910));
+  }
+}
+
+@media (max-width: 1040px) {
+  .design__text::before {
+    display: none;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1278,6 +1447,14 @@ body._lock {
   .item-decor__content {
     max-width: 100%;
     margin: 0px 0px 30px 0px;
+  }
+
+  .design__inner::after {
+    display: none;
+  }
+
+  .design ._icon {
+    display: none;
   }
 }
 
