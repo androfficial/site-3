@@ -971,6 +971,10 @@ body._lock {
   padding-bottom: 150px;
 }
 
+.quality__container {
+  padding: 0 30px;
+}
+
 .quality__top:not(:last-child) {
   margin-bottom: 40px;
 }
