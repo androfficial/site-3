@@ -272,6 +272,77 @@ body._lock {
   transition: fill 0.3s ease 0s;
 }
 
+.scrollbar {
+  position: absolute;
+  top: 30%;
+  -webkit-transform: translateY(-30%);
+      -ms-transform: translateY(-30%);
+          transform: translateY(-30%);
+  left: 250px;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.scrollbar__column:not(:last-child) {
+  margin: 0px 0px 80px 0px;
+}
+
+.scrollbar__number {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  font-size: 52px;
+  line-height: 1;
+  color: #BEA67C;
+  position: relative;
+}
+
+.scrollbar__number::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 4px;
+  height: 51px;
+  background-color: #C0AF91;
+}
+
+.scrollbar__list {
+  position: relative;
+}
+
+.scrollbar__item:not(:last-child) {
+  margin: 0px 0px 40px 0px;
+}
+
+.scrollbar__item.active .scrollbar__point {
+  background-color: #BEA67C;
+}
+
+.scrollbar__point {
+  position: absolute;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #303030;
+  -webkit-transition: background-color 0.3s ease 0s;
+  -o-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -1384,7 +1455,7 @@ body._lock {
 
 .footer__inner {
   text-align: center;
-  min-height: 70px;
+  min-height: 55px;
   padding: 5px 0;
   position: relative;
   z-index: 10;

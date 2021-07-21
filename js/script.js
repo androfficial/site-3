@@ -7,11 +7,15 @@ let isMobile = {
    any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
 };
 const footer = document.querySelector('.footer');
+const number = document.querySelector('.scrollbar__number');
 
 new fullpage('#page', {
 	autoScrolling: true,
 	scrollHorizontally: true,
 	scrollOverflow: true,
+	menu: '#scrollbar',
+	anchors: ['intro', 'decor', 'quality', 'design', 'about'],
+	
 	// afterLoad: function(origin){
 
 	// 	if(origin.index == 3){
@@ -37,13 +41,15 @@ new fullpage('#page', {
 if (window.innerWidth < 992) {
 	footer.style.display = 'none';	
 }
+
 window.onload = () => {
    if (window.innerWidth > 1024) {
-      const header  = document.querySelector('.header');
-const title   = document.querySelector('.intro__title');
-const btn     = document.querySelector('.intro__btn');
-const scroll  = document.querySelector('.intro__scroll');
-const footer  = document.querySelector('.footer');
+      const header     = document.querySelector('.header');
+const title      = document.querySelector('.intro__title');
+const btn        = document.querySelector('.intro__btn');
+const scroll     = document.querySelector('.intro__scroll');
+const footer     = document.querySelector('.footer');
+const scrollbar  = document.querySelector('.scrollbar');
 
 header.classList.add('animate__animated', 'animate__fadeInDown');
 header.style.setProperty('--animate-duration', '1.8s');
@@ -59,6 +65,9 @@ scroll.style.setProperty('--animate-duration', '1.8s');
 
 footer.classList.add('animate__animated', 'animate__fadeInUp');
 footer.style.setProperty('--animate-duration', '1.8s');
+
+scrollbar.classList.add('animate__animated', 'animate__fadeInLeftBig');
+scrollbar.style.setProperty('--animate-duration', '1.8s');
 
 btn.addEventListener('animationend', () => {
    btn.classList.add('_anim');
