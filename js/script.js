@@ -6,15 +6,47 @@ let isMobile = {
    Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
    any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
 };
+const footer = document.querySelector('.footer');
+
+new fullpage('#page', {
+	autoScrolling: true,
+	scrollHorizontally: true,
+	scrollOverflow: true,
+	// afterLoad: function(origin){
+
+	// 	if(origin.index == 3){
+	// 		fullpage_api.setAutoScrolling(false);
+	// 	} else {
+	// 		fullpage_api.setAutoScrolling(true);
+	// 	}
+
+	// }
+
+	// onLeave: function(origin, destination, direction){
+
+	// 	if(origin.index == 1 && direction =='down'){
+	// 		fullpage_api.setAutoScrolling(false);
+	// 	} else {
+	// 		fullpage_api.setAutoScrolling(true);
+	// 	}
+
+	// }
+
+});
+
+if (window.innerWidth < 992) {
+	footer.style.display = 'none';	
+}
 window.onload = () => {
    if (window.innerWidth > 1024) {
-      const inner   = document.querySelector('.header__inner');
+      const header  = document.querySelector('.header');
 const title   = document.querySelector('.intro__title');
 const btn     = document.querySelector('.intro__btn');
 const scroll  = document.querySelector('.intro__scroll');
+const footer  = document.querySelector('.footer');
 
-inner.classList.add('animate__animated', 'animate__fadeInDown');
-inner.style.setProperty('--animate-duration', '1.8s');
+header.classList.add('animate__animated', 'animate__fadeInDown');
+header.style.setProperty('--animate-duration', '1.8s');
 
 title.classList.add('animate__animated', 'animate__fadeInLeft');
 title.style.setProperty('--animate-duration', '1.8s');
@@ -24,6 +56,9 @@ btn.style.setProperty('--animate-duration', '1.8s');
 
 scroll.classList.add('animate__animated', 'animate__fadeInUp');
 scroll.style.setProperty('--animate-duration', '1.8s');
+
+footer.classList.add('animate__animated', 'animate__fadeInUp');
+footer.style.setProperty('--animate-duration', '1.8s');
 
 btn.addEventListener('animationend', () => {
    btn.classList.add('_anim');
