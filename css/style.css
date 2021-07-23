@@ -2041,7 +2041,7 @@ body._lock {
 
   .about__picture {
     padding: 0px 0px 68.334% 0px;
-    margin-right: 0;
+    margin: 0 -15px;
   }
 
   .about__content {
