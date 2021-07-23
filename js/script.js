@@ -112,6 +112,8 @@ let observer = new IntersectionObserver((entries, observer) => {
          scrollNumber.innerHTML = sectionNumber;
       }
    });
+}, {
+   threshold: 0.5
 });
 
 document.querySelectorAll('section').forEach((section) => {
