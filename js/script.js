@@ -9,39 +9,36 @@ let isMobile = {
 const footer = document.querySelector('.footer');
 const number = document.querySelector('.scrollbar__number');
 
-new fullpage('#page', {
-	autoScrolling: true,
-	scrollHorizontally: true,
-	scrollOverflow: true,
-	menu: '#scrollbar',
-	anchors: ['intro', 'decor', 'quality', 'design', 'about'],
+if (window.innerWidth > 768) {
+	new fullpage('#page', {
+		autoScrolling: true,
+		scrollHorizontally: true,
+		scrollOverflow: true,
+		menu: '#scrollbar',
+		anchors: ['intro', 'furniture', 'decor', 'quality', 'design', 'about'],
+		
+		// afterLoad: function(origin){
 	
-	// afterLoad: function(origin){
-
-	// 	if(origin.index == 3){
-	// 		fullpage_api.setAutoScrolling(false);
-	// 	} else {
-	// 		fullpage_api.setAutoScrolling(true);
-	// 	}
-
-	// }
-
-	// onLeave: function(origin, destination, direction){
-
-	// 	if(origin.index == 1 && direction =='down'){
-	// 		fullpage_api.setAutoScrolling(false);
-	// 	} else {
-	// 		fullpage_api.setAutoScrolling(true);
-	// 	}
-
-	// }
-
-});
-
-if (window.innerWidth < 992) {
-	footer.style.display = 'none';	
+		// 	if(origin.index == 3){
+		// 		fullpage_api.setAutoScrolling(false);
+		// 	} else {
+		// 		fullpage_api.setAutoScrolling(true);
+		// 	}
+	
+		// }
+	
+		// onLeave: function(origin, destination, direction){
+	
+		// 	if(origin.index == 1 && direction =='down'){
+		// 		fullpage_api.setAutoScrolling(false);
+		// 	} else {
+		// 		fullpage_api.setAutoScrolling(true);
+		// 	}
+	
+		// }
+	
+	});
 }
-
 if (window.innerWidth > 1024) {
    const header     = document.querySelector('.header');
 const title      = document.querySelector('.intro__title');
