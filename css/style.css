@@ -564,14 +564,15 @@ body._lock {
   left: -5px;
   width: 35px;
   height: auto;
-  padding: 5px;
+  padding: 2px 5px 5px 5px;
+  background-color: rgba(0, 0, 0, 0.9);
   -webkit-transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s, top 0.3s ease 0s;
   -o-transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s, top 0.3s ease 0s;
   transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s, top 0.3s ease 0s;
 }
 
 .info-header__submenu._show {
-  top: calc(100% + 5px);
+  top: calc(100% + 21px);
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
