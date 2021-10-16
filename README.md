@@ -5,6 +5,7 @@
 * CSS @Keyframes Animations
 * Animate.css
 * JavaScript
+* FullPage.js
 * BEM methodology
 * Responsive, elastic and cross-browser layout.
 
